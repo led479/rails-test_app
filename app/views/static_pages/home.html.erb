@@ -1,5 +1,13 @@
-<h1>Este é minha primeira página rails</h1>
-<p>
-  Aqui é a página inicial da minha primeira aplicação rails
-  com um conhecimento um pouco maior. Feito através do <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>.
-</p>
+<div class="center jumbotron">
+  <h1>Este é minha primeira página rails</h1>
+
+  <h2>
+    Aqui é a página inicial da minha primeira aplicação rails
+    com um conhecimento um pouco maior. Feito através do <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>.
+  </h2>
+
+  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails logo"),
+              'http://rubyonrails.org/'%>
