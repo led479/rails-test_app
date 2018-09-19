@@ -10,6 +10,8 @@ gem 'rails-controller-testing'
 gem 'bcrypt'
 gem 'jquery-rails'
 gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
