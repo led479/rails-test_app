@@ -3,6 +3,7 @@ require 'test_helper'
 class UsersEditTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
+    @user2 = users(:jonas)
   end
 
   test "uncusseful edit" do
@@ -28,7 +29,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_equal email, @user.email
   end
 
-  test "can't edit if not logged in" do
+  test "can't access edit page if not logged in" do
     get edit_user_path(@user)
     assert_not flash.empty?
     assert_redirected_to login_url
@@ -38,5 +39,20 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     patch user_path(@user), params: {user: { name: @user.name, email: @user.email}}
     assert_not flash.empty?
     assert_redirected_to login_url
+  end
+
+  test "can't access edit pages from other users" do
+    log_in_as(@user)
+    get edit_user_path(@user2)
+    assert flash.empty?
+    assert_redirected_to root_url
+  end
+
+  test "can't update other users" do
+    log_in_as(@user2)
+    patch user_path(@user), params: { user: {name: @user.name, email: @user.email}}
+    debugger
+    assert flash.empty?
+    assert_redirected_to root_url
   end
 end
