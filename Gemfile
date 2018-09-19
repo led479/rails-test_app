@@ -9,6 +9,7 @@ gem 'bootstrap-sass', '>=3.3.7'
 gem 'rails-controller-testing'
 gem 'bcrypt'
 gem 'jquery-rails'
+gem 'faker'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
