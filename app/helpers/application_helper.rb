@@ -9,4 +9,8 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def pluralizer(num, str)
+    pluralize(num, str)
+  end
 end

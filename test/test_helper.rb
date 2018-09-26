@@ -24,4 +24,5 @@ class ActiveSupport::TestCase
   def log_out_test
     delete logout_path
   end
+
 end
