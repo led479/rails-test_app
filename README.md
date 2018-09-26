@@ -16,6 +16,13 @@ is available jointly under the MIT License and the Beerware License. See
 To get started with the app, clone the repo and then install the needed gems:
 
 ```
+$ sudo apt install libsqlite3-dev
+$ sudo apt install gcc libcurl4-openssl-dev libxml2-dev -y
+```
+
+Then install the gems:
+
+```
 $ bundle install --without production
 ```
 
