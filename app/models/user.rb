@@ -73,6 +73,18 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
+  def follow(other_user)
+    following << other_user
+  end
+
+  def unfollow(other_user)
+    following.delete(other_user)
+  end
+
+  def following?(other_user)
+    following.include?(other_user)
+  end
+
   # Defines a proto-feed.
   # See "Following users" for the full implementation.
   def feed
